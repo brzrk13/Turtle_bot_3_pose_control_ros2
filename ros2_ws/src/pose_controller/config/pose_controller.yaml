@@ -1,0 +1,22 @@
+pose_controller:
+  ros__parameters:
+    odom_topic: "/odom"
+    cmd_vel_topic: "/cmd_vel"
+    use_stamped_twist: false        # true if the robot expects TwistStamped
+    control_frequency: 20.0
+
+    # Control gains. Stability: k_rho > 0, k_beta < 0, k_alpha - k_rho > 0.
+    k_rho: 0.45
+    k_alpha: 1.2
+    k_beta: -0.45
+    k_yaw: 1.5
+
+    max_linear_velocity: 0.20       # m/s
+    max_angular_velocity: 1.6       # rad/s
+    linear_accel_limit: 0.5         # m/s^2
+    angular_accel_limit: 3.0        # rad/s^2
+
+    position_tolerance: 0.04        # m
+    orientation_tolerance_deg: 4.0  # deg
+    settle_cycles: 5
+    goal_timeout: 60.0              # s

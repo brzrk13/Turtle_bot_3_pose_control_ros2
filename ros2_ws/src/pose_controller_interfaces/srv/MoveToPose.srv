@@ -1,0 +1,13 @@
+# Request: target pose expressed in the odometry frame.
+float64 x      # target x position [m]
+float64 y      # target y position [m]
+float64 yaw    # target yaw orientation [deg]
+---
+# Response, reported once the robot has settled.
+bool   success        # true if the final pose is within tolerance
+string message        # human readable status
+float64 final_x       # achieved x [m]
+float64 final_y       # achieved y [m]
+float64 final_yaw     # achieved yaw [deg]
+float64 position_error    # remaining Euclidean position error [m]
+float64 orientation_error # remaining orientation error [deg]
